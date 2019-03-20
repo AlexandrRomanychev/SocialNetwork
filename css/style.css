@@ -38,7 +38,7 @@ body{
 
 .header .social{
 	color: #FFF;
-	margin-left: 55px;
+	margin-left: 100px;
 }
 
 /*Приветствие*/
@@ -49,4 +49,27 @@ body{
 
 .hello span{
 	font-size: 45px;
+}
+
+/* Цвет ссылки по умолчанию*/
+a{
+	color: white;
+}
+
+/* Подсвечивание ссылки "одноклассники" в header */
+.aiming-odnoclass-link a:hover {
+	color:#ff8c00;
+}
+
+/* появление значка одноклассников при наведении*/
+.aiming-odnoclass-img span{
+	position:absolute;
+	top: 2%;
+	left: 48.5%;
+	opacity: 0;
+	transition: .5s;
+}
+
+.aiming-odnoclass-img:hover span{
+	opacity: 1;
 }
