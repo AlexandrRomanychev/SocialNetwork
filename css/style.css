@@ -79,6 +79,10 @@ a{
 	color: #006dbf;
 }
 
+.aiming-instagram-link a:hover {
+    color: #3598f1;
+}
+
 .text{
 	color:#2851A3;
 }
