@@ -35,6 +35,20 @@ module.exports = function(app) {
         });
     });
 
+    app.get("/delete", urlencodedParser, function(request, response) {
+        var dataBase = new DataBase();
+        dataBase.mongoClient.connect(function(err, client) {
+            const db = client.db("User");
+            const collection = db.collection("user");
+            console.log('Id user: ' + userId);
+            var userDelete = dataBase.deleteUserById(collection, userId);
+            userDelete.then(function(result) {
+                client.close();
+                response.redirect("/");
+            });
+        });
+    });
+
     app.post("/change", urlencodedParser, function(request, response) {
         if (!request.body) return response.sendStatus(400);
         var oldpass = hash1.update(`${request.body.oldpass}`).digest('hex');
@@ -54,7 +68,7 @@ module.exports = function(app) {
                     var userId = result[0]._id;
                     collection.update({ "_id": userId }, { $set: { "password": newpass } });
                     client.close();
-                    response.redirect("/main");
+                    response.redirect("/main?userId=" + userId);
                 } else {
                     console.log('Упс');
                     client.close();
