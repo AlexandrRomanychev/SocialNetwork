@@ -1,10 +1,21 @@
-import React, { Component } from 'react';
-
-class IndexPage extends Component {
-
-    constructor(props) {
-        super(props);
-    }
+function Welcome(props) {
+    return ( <
+        h1 > Hello, { props.name } < /h1>
+    );
 }
 
-export default IndexPage;
+function App() {
+    return ( <
+        div >
+        <
+        Welcome name = "Sara" / >
+        <
+        Welcome name = "Cahal" / >
+        <
+        Welcome name = "Edite" / >
+        <
+        /div>
+    );
+}
+
+ReactDOM.render( < App / > , document.getElementById('root'));
