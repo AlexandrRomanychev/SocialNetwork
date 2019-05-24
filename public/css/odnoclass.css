@@ -1,13 +1,13 @@
 body {
     margin: 0;
-    background-image: url('../images/zactavAutor.png');
-    background-size: cover;
+    background: url('../images/zactavAutor.png') space center top #F67219 ;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .auth-block {
     display: flex;
     justify-content: center;
-
 }
 
 .auth-window {

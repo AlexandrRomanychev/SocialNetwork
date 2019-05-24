@@ -1,5 +1,7 @@
 body{
 	margin: 0;
+	background-size: cover; 
+	overflow-x: scroll;
 }
 
 /* Стили для хедера страницы*/
@@ -7,16 +9,17 @@ body{
 .header {
 	background-color: #464646;
 	color: white;
-	height: 100px;
-	font-size: 30px;
+	font-size: 240%;
+	min-width: 1920px;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
 }
 
 .header span{
-	font-size: 52px;
+	font-size: 172%;
 	color: #FFF;
+	padding-left: 1.4%;
 }
 
 .error{
@@ -80,7 +83,8 @@ body{
 
 .header .social{
 	color: #FFF;
-	margin-left: 45px;
+	margin-left: 2%;
+	margin-right: 1%;
 }
 
 /*Приветствие*/
@@ -108,15 +112,10 @@ a{
 	color:#ff8c00;
 }
 
-
-/* Подсвечивание ссылки "одноклассники" в header */
 .aiming-vk-link a:hover {
 	color:#5c7cb6;
 }
 
-.aiming-twitter-link a:hover{
-	color: #006dbf;
-}
 .aiming-facebook-link a:hover{
 	color: #3b5998;
 }
