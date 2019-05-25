@@ -43,7 +43,7 @@ app.post("/enter", urlencodedParser, function(request, response) {
                 if (result.length > 0) {
                     console.log('Успешно');
                     client.close();
-                    response.redirect("/main");
+                    response.redirect("/main?userId=" + result[0]._id);
                 } else {
                     console.log('Упс');
                     client.close();

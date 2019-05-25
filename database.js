@@ -70,6 +70,16 @@ class DataBase {
             });
         });
     }
+
+    deleteUserById(collection, id) {
+        return new Promise(function(resolve, reject) {
+            var mongodb = require("mongodb");
+            collection.deleteOne({ _id: new mongodb.ObjectID(id) }, function(err, results) {
+                if (err) throw err;
+                resolve(results);
+            });
+        });
+    }
 }
 
 module.exports = DataBase;
