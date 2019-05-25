@@ -10,7 +10,7 @@ h1{
 .loginform{
 	border: 1px solid #d8dee2;
 	width: 270px;
-	margin-left: -6%;
+	margin-left: -5%;
 	padding-left: 25px;
 	padding-bottom: 20px;
 }
@@ -39,7 +39,8 @@ h1{
 .content img{
 	width: 60px;
 	height: 60px;
-	margin-left: 6%;
+	margin-left: 5%;
+	margin-top: 5%;
 }
 
 .content .secondHeader{
