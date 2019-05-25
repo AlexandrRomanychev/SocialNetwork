@@ -10,7 +10,7 @@ const DataBase = require("./database");
 // создаем парсер для данных application/x-www-form-urlencoded
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-var port = process.env.PORT || 3000,
+var port = process.env.PORT || 5000,
     DomParser = require('dom-parser'),
     parser = new DomParser(),
     fs = require('fs');
