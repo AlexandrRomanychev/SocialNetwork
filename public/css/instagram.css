@@ -1,15 +1,14 @@
-﻿
-.loginInstagram {
+﻿.loginInstagram {
     font-family: 'Roboto', sans-serif;
     display: block;
     text-align: center;
     padding: 10px;
     border: solid gainsboro;
     background-color: white;
-    height:550px;
+    height: 550px;
     margin-left: 30%;
-    margin-right:10%;
-    margin-top: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
 }
 
 .text {
@@ -27,22 +26,22 @@
 }
 
 .center {
-    margin-top:10%;
+    margin-top: 7%;
     margin-left: 35%;
 }
-
-
 
 .leftside {
     width: 50%;
     justify-content: center;
 }
+
 .rightside {
     width: 50%;
 }
 
 
 /*Кнопка входа*/
+
 .logbutton {
     font-size: 14px;
     margin-top: 5px;
@@ -58,6 +57,7 @@
 
 
 /*Элементы для входа в инстаграм*/
+
 .instagramInput {
     width: 80%;
     background-color: #fafafa;
@@ -67,5 +67,3 @@
     margin-top: 10px;
     font-size: 14px;
 }
-
-
