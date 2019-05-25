@@ -11,6 +11,9 @@ module.exports = function(app) {
     var errorLog = false;
     var UserLogin = null;
     var UserPassword = null;
+
+
+    
     /*
      * Для главной страницы GitHub
      */
