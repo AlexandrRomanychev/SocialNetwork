@@ -19,12 +19,10 @@
         "dom-parser": "^0.1.6",
         "jQuery": ">=1.7.4",
         "jquery": ">=3.4.0",
-        "nodemon": "^1.19.0",
-        "lite-server": "^2.2.1"
+        "nodemon": "^1.19.0"
     },
     "scripts": {
-        "start": "node index.js",
-        "start": "lite-server"
+        "start": "node index.js"
     },
     "repository": {
         "type": "git",

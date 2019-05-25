@@ -126,7 +126,8 @@ app.post("/enter", urlencodedParser, function(request, response) {
 });
 
 app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/index.html");
+    //response.sendFile(__dirname + "/index.html");
+
 });
 
 //ссылки на другие страницы
