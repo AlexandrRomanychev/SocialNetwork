@@ -2,7 +2,7 @@ const { SHA3 } = require('sha3');
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require('path');
-const publicPath = path.join(__dirname, '/public');
+const publicPath = path.join(__dirname, '/public/client');
 const app = express();
 const hash1 = new SHA3(512);
 const DataBase = require("./database");
@@ -47,6 +47,7 @@ app.post("/enter", urlencodedParser, function(request, response) {
                 } else {
                     console.log('Упс');
                     client.close();
+                    //response.status(500).send('Неверный логин/пароль');
                     fs.readFile('index.html', 'utf8', function(err, html) {
                         if (!err) {
                             var dom = parser.parseFromString(html).rawHTML;
@@ -56,13 +57,7 @@ app.post("/enter", urlencodedParser, function(request, response) {
                     });
                 }
             }, function(error) {
-                fs.readFile('index.html', 'utf8', function(err, html) {
-                    if (!err) {
-                        var dom = parser.parseFromString(html).rawHTML;
-                        //вывод сообщения о неверном логине/пароле
-                        response.send(dom.replace('<input type="submit"', '\n<div class=\"error\">Неверный логин/пароль</div>\n<input type="submit"'));
-                    }
-                });
+                response.send(error);
             });
         } else {
             /*Валидация введенных паролей*/
