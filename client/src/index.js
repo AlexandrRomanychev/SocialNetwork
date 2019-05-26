@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SimpleHeader from './SimpleHeader';
+import Header from './Header';
 import MainAuth from './MainAuth';
 
 ReactDOM.render( <
-    SimpleHeader / > ,
+    Header / > ,
     document.getElementById('header')
 );
 ReactDOM.render( <

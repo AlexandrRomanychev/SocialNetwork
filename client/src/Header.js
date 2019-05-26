@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './style.css';
+import './css/style.css';
+import './css/nullStyle.css';
 
-class SimpleHeader extends Component {
+class Header extends Component {
+
     render() {
         return ( <
             div class = 'header' >
@@ -12,4 +14,4 @@ class SimpleHeader extends Component {
     }
 }
 
-export default SimpleHeader;
+export default Header;

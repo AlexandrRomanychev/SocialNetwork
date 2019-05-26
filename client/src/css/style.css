@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+
+/* Стили для хедера страницы*/
+
+.header {
+    background-color: #464646;
+    display: inline-flex;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.header span {
+    width: 19vw;
+    font-size: 9vh;
+    color: #FFF;
+    justify-content: flex-start;
+    margin-right: 8vw;
+}
+
+.header .vk {
+    align-items: center;
+    display: flex;
+    font-size: 4vh;
+    width: 7vw;
+    margin-right: 6.5vw;
+    color: #FFF;
+}
+
+.header .instagram {
+    align-items: center;
+    display: flex;
+    font-size: 4vh;
+    width: 6.5vw;
+    margin-right: 6.5vw;
+    color: #FFF;
+}
+
+
+/* Вкладки соц сетей */
+
+.header .odnok {
+    align-items: center;
+    display: flex;
+    font-size: 4vh;
+    width: 10.5vw;
+    color: #FFF;
+    margin-right: 6.5vw;
+    justify-content: center;
+}
+
+.header .fb {
+    align-items: center;
+    display: flex;
+    font-size: 4vh;
+    width: 6vw;
+    color: #FFF;
+    margin-right: 6.5vw;
+    justify-content: center;
+}
+
+.header .git {
+    align-items: center;
+    display: flex;
+    font-size: 4vh;
+    width: 4.8vw;
+    color: #FFF;
+    margin-right: 5.5vw;
+    justify-content: center;
+}
+
+.header .exit {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 4vh;
+    width: 4.2vw;
+    margin-right: 2.5vw;
+}
+
+.error {
+    color: red;
+    margin-left: 13%;
+    margin-bottom: 4%;
+}
+
+.change {
+    color: black;
+    margin-left: 90%;
+}
+
+#loginUser .error {
+    margin-left: 21%;
+}
+
+.ok {
+    color: green;
+    margin-left: 13%;
+    margin-bottom: 4%;
+}
+
+#loginUser .ok {
+    margin-left: 15%;
+}
+
+
+/* Форма регистрации и входа */
+
+#loginUser {
+    margin-left: 40%;
+    margin-top: 10%;
+    width: 310px;
+    padding: 30px 50px 60px 50px;
+    border: 1px solid #212121;
+    border-radius: 15%;
+}
+
+#changePass {
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 310px;
+    padding: 30px 50px 60px 50px;
+    border: 1px solid #212121;
+    border-radius: 15%;
+}
+
+#loginUser p,
+#changePass p {
+    font-size: 27.5px;
+}
+
+#loginUser .login,
+#loginUser .password {
+    width: 300px;
+    height: 20px;
+}
+
+#loginUser .button {
+    width: 150px;
+}
+
+
+/*Приветствие*/
+
+.hello {
+    margin-left: 15%;
+    margin-top: 15%;
+}
+
+.helloPas {
+    margin-left: 40%;
+    margin-top: 15%;
+}
+
+.hello span {
+    font-size: 45px;
+}
+
+
+/* Цвет ссылки по умолчанию*/
+
+a {
+    color: white;
+}
+
+
+/* Подсвечивание ссылки "одноклассники" в header */
+
+.aiming-odnoclass-link a:hover {
+    color: #ff8c00;
+}
+
+.aiming-vk-link a:hover {
+    color: #5c7cb6;
+}
+
+.aiming-facebook-link a:hover {
+    color: #3b5998;
+}
+
+.aiming-instagram-link a:hover {
+    color: #3f729b;
+}
+
+.aiming-github-link a:hover {
+    color: rgb(23, 23, 23);
+}
+
+.text {
+    color: #2851A3;
+}
