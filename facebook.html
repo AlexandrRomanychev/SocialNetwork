@@ -15,6 +15,48 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+		<!-- <div id="fb-root"></div>
+		<script src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+		<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.3&appId=330413264285819&autoLogAppEvents=1"></script>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '330413264285819',
+			cookie     : true,
+			xfbml      : true,
+			version    : 'v3.3'
+		});
+					  
+		FB.AppEvents.logPageView(); 
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				var accessToken = response.authResponse.accessToken;
+				console.log('You\'ve already been login in facebook!');
+				FB.api('/me/feed', 'GET',{},
+				function(response) {
+					// console.log(response.name);
+					// console.log(response.id);
+					console.log(response);//магия, которя будет выгружать данные 
+				});
+			} 
+			else
+			{		
+				console.log('User cancelled login or did not fully authorize.');		
+			}
+		});
+		
+	};
+				
+	(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<!-- Хедер !-->
 	<div class="header">
 		<span>Социальные сети</span>
@@ -24,16 +66,19 @@
 		<div class="social aiming-facebook-link"><a href="/facebook">Facebook</a></div>
 		<div class="social aiming-github-link"><a href="/github">GitHub</a></div>
 		<a href="/enter" class="social">Выход</a>
-    </div>
+	</div>
+	<!--  Мой Хедер !-->
 	<div class="header1">
-		<div class="logo">Facebook</div>
+		<div class="logo">facebook</div>
 		<div class="header1-login">
-					<input type="text" class="login" placeholder="Телефон, адрес электронной почты">
-					<input type="password" class="login" placeholder="Пароль">
-					<input type="submit" value="Вход" class="logbutton" onclick="loginfacebook()">
+				<form action="/facebook" method="post">
+					<!-- <input type="text" class="login" placeholder="Телефон, адрес электронной почты"> -->
+					<!-- <input type="password" class="login" placeholder="Пароль"> -->
+					<!-- <input type="submit" value="Вход" class="logbutton"  ></form> -->
+					<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
 		</div>
 	</div>
-	<div class= "section">
+	<!-- <div class= "section">
 		<div class="item">
 			<div class="text">Facebook помогает вам всегда оставаться на связи и общаться со своими знакомыми.</div>
 			<img src="images/world.png" alt="Image" >
@@ -57,8 +102,9 @@
 			    	<input type="radio" name="sex" checked><h3>Мужчина</h3>
 			    </div>
 		    </div>
-		   <div class=elm> <input type="submit" value="Регистрация" class="logbutton1" onclick="checkinfacebook()"></div>
+		   <div class=elm> <input type="submit" value="Регистрация" class="logbutton1" onclick=FB.getLoginStatus()></div>
 		</div>
-	</div>
+	</div> -->
+
 </body>
 </html>

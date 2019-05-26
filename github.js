@@ -77,6 +77,7 @@ module.exports = function(app){
 	/*
 	* Для репозиториев GitHub
 	*/
+	
 	app.get("/github/repositories",function(request,response){
 		fs.readFile('githubLogIn.html', 'utf8', function(err, html){
 			if (!err){
