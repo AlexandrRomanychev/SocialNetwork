@@ -10,30 +10,23 @@ class MainAuth extends Component {
         super(props);
         this.state.login = '';
         this.state.password = '';
-        this.regSuccessMessage = '';
-        this.regFailMessage = '';
-        this.logFailMessage = '';
+        this.state.regSuccessMessage = '';
+        this.state.regFailMessage = '';
+        this.state.logFailMessage = '';
     }
 
     authButtonClickHandler = () => {
-        User.login(this.state.login, this.state.password)
-            .then(res => {
-                this.setState({
-                    regSuccessMessage: '',
-                    regFailMessage: '',
-                    logFailMessage: '',
-                    login: '',
-                    password: ''
-                });
+        fetch('/enter/', {
+                method: 'POST',
+                body: 'a=b',
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                }
             })
-            .catch(err => {
-                this.setState({
-                    regSuccessMessage: '',
-                    regFailMessage: '',
-                    logFailMessage: err,
-                    login: '',
-                    password: ''
-                });
+            .then(function(response) {
+                return response.json()
+            }).then(function(body) {
+                console.log(body);
             });
     }
 
@@ -47,55 +40,48 @@ class MainAuth extends Component {
 
 
     render() {
-        let loginError;
-        let regSuccess;
-        let regError;
-        if (this.state.logFailMessage) {
-            loginError = ( < div class = "error" > { this.state.logFailMessage } < /div>)
-            }
-            if (this.state.regErrorMessage) {
-                regError = ( < div class = "error" > { this.state.regFailMessage }
-                } < /div>)
-            }
-            if (this.state.regSuccessMessage) {
-                regSuccess = ( < div class = "ok" > { this.state.regSuccessMessage }
-                } < /div>)
-            }
-            return ( < form action = "/enter"
-                method = "post"
-                id = "loginUser" >
-                <
-                p > Регистрация / Авторизация < /p>
+            let loginError;
+            let regSuccess;
+            let regError;
+            if (this.state.logFailMessage) {
+                loginError = ( < div className = "error" > { this.state.logFailMessage } < /div>)
+                }
+                if (this.state.regErrorMessage) {
+                    regError = ( < div className = "error" > { this.state.regFailMessage } < /div>)
+                    }
+                    if (this.state.regSuccessMessage) {
+                        regSuccess = ( < div className = "ok" > { this.state.regSuccessMessage } < /div>)
+                        }
+                        return ( <
+                            form method = "post"
+                            action = "/enter"
+                            id = "loginUser" >
+                            <
+                            p > Регистрация / Авторизация < /p>  <
+                            input name = "login"
+                            type = "text"
+                            placeholder = "Логин"
+                            className = "login" / >
+                            <
+                            p > < /p>   <
+                            input name = "password"
+                            type = "password"
+                            placeholder = "Пароль"
+                            className = "password" / >
+                            <
+                            p > < /p>    { regSuccess } { regError } { loginError } <
+                            input type = "submit"
+                            className = "button"
+                            value = "Вход"
+                            name = "enter" / > <
+                            input type = "submit"
+                            value = "Регистрация"
+                            className = "button"
+                            name = "registration" / >
 
-                <
-                input onChange = { this.loginChangeHandler }
-                name = "login"
-                type = "text"
-                value = { this.state.login }
-                placeholder = "Логин"
-                class = "login" / >
-                <
-                p > < /p> <
-                input onChange = { this.passwordChangeHandler }
-                value = { this.state.password }
-                name = "password"
-                type = "password"
-                placeholder = "Пароль"
-                class = "password" / >
-                <
-                p > < /p>  { regSuccess } { regError } { loginError }  <
-                button onClick = { this.authButtonClickHandler }
-                value = "Вход"
-                class = "button"
-                name = "enter" / >
-                <
-                input type = "submit"
-                value = "Регистрация"
-                class = "button"
-                name = "registration" / >
-                <
-                /form>
-            );
-        }
-    }
-    export default MainAuth;
+                            <
+                            /form>
+                        );
+                    }
+                }
+                export default MainAuth;

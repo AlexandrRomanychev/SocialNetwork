@@ -1,7 +1,6 @@
-const BL_URL = '/enter';
 export default {
     login: (username, password) => {
-        const requestUrl = BL_URL;
+        const requestUrl = '/enter';
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -9,8 +8,7 @@ export default {
             },
             body: JSON.stringify({
                 'login': username,
-                'password': password,
-                'enter': 'yes'
+                'password': password
             })
         };
 
