@@ -7,10 +7,10 @@
     "body-parser": "^1.19.0",
     "btoa": "^1.2.1",
     "express": "^4.16.4",
-    "jQuery": ">=1.7.4",
-    "jsdom": "^14.1.0",
+    "jquery": ">=3.4.0",
+    "jsdom": "^14.0.0",
     "mongodb": "^3.2.4",
-    "sha3": "^2.0.3"
+    "sha3": "^2.0.2"
   },
   "devDependencies": {
     "dom-parser": "^0.1.6",

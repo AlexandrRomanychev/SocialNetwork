@@ -7,7 +7,6 @@ body {
 .auth-block {
     display: flex;
     justify-content: center;
-
 }
 
 .auth-window {
@@ -15,10 +14,9 @@ body {
     padding: 30px 30px 60px 30px;
     border-radius: 5px;
     border: 1px solid white;
-    margin-top: 100px;
+    margin-top: 5%;
     width: 260px;
 }
-
 
 .string-up-input-login {
     display: flex;
@@ -26,7 +24,7 @@ body {
     font-size: 14px;
 }
 
-.string-up-input-password{
+.string-up-input-password {
     display: flex;
     justify-content: left;
     padding-right: 210px;
@@ -34,12 +32,12 @@ body {
     margin-top: 20px;
 }
 
-.input-log-parol-block{
+.input-log-parol-block {
     display: block;
     position: left;
 }
 
-.form-input{
+.form-input {
     display: block;
     padding: 5px;
     border-radius: 4px;
@@ -57,38 +55,36 @@ body {
 
 .enter-button {
     align-content: left;
-    padding:  7px 105px 7px 105px;
+    padding: 7px 105px 7px 105px;
     background-color: #F67219;
     border-radius: 20px;
     border: 2px solid white;
     color: white;
     outline: none;
-    text-decoration: none; 
-
+    text-decoration: none;
 }
 
 .enter-button:hover {
-    background: #E37023 ;
+    background: #E37023;
     border: 2px solid #E37023;
 }
 
-.forget-password{
+.forget-password {
     padding-left: 77px;
     color: black;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-.forget-password:hover
-{ 
+.forget-password:hover {
     text-decoration: underline;
 }
 
-.image-no-profil{
+.image-no-profil {
     margin-top: 30px;
     margin-left: 8px;
 }
 
-.registration-button{
+.registration-button {
     align-content: left;
     padding: 7px 85px 7px 85px;
     background-color: #e8e8e8;
@@ -99,7 +95,6 @@ body {
 }
 
 .registration-button:hover {
-    background: #DFDCDB ;
+    background: #DFDCDB;
     border: 2px solid #DFDCDB;
 }
-

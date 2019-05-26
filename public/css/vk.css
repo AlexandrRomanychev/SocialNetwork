@@ -1,26 +1,32 @@
-<!-- html, body{
+html,
+body {
     background-color: #ededef
 }
-.content{
-	display: inline-flex;
-	width: 100%;
-	height: 100%;
+
+.content {
+    display: inline-flex;
+    width: 100%;
+    height: 60%;
 }
-.leftside{
-    width: 60%;	
-    height: 580px;	
-    position:relative;
+
+.leftside {
+    width: 60%;
+    height: 580px;
+    position: relative;
     min-width: 1000px;
 }
-.center{
-    margin-top: 10%;
+
+.center {
+    margin-top: 8%;
     margin-left: 25%;
-    position:relative;
+    position: relative;
 }
-.rightside{
+
+.rightside {
     width: 40%;
     justify-content: center;
 }
+
 .log-window {
     font-family: 'Roboto', sans-serif;
     width: 50%;
@@ -28,15 +34,17 @@
     padding: 30px 10px 50px 30px;
     border-radius: 3px;
     border: 1px solid white;
-    margin-top: 50px;
+    margin-top: 10%;
     margin-right: 10%
 }
-.input-log-parol-block{
+
+.input-log-parol-block {
     display: block;
     position: center;
     margin-bottom: 15px;
 }
-.form-input{
+
+.form-input {
     width: 90%;
     display: block;
     padding: 5px;
@@ -46,16 +54,18 @@
     font-size: 15px;
     outline: none
 }
+
 .enter-button {
     width: 40%;
     align-content: center;
-    padding:  10px 10px 7px 10px;
+    padding: 10px 10px 7px 10px;
     background-color: #5c7cb6;
     border-radius: 9px;
     border: 5px solid white;
     color: white;
     outline: none
 }
+
 .registration-window {
     font-family: 'Roboto', sans-serif;
     width: 50%;
@@ -63,40 +73,44 @@
     padding: 30px 10px 50px 30px;
     border-radius: 3px;
     border: 1px solid white;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-right: 10%;
     text-align: center;
 }
-.string-bold{
+
+.string-bold {
     font-size: 20px;
-	color: black;
-    font-weight:  bold;
+    color: black;
+    font-weight: bold;
 }
-.string-moment-reg{
+
+.string-moment-reg {
     font-size: 13px;
-	color: grey;
+    color: grey;
     position: center;
     margin-top: 1%;
     margin-bottom: 5%;
 }
-.string-date{
+
+.string-date {
     font-size: 15px;
     color: grey;
-    font-weight:  bold;
+    font-weight: bold;
     text-align: left;
 }
-.flex-container{
+
+.flex-container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content: center;
-
 }
-.reg-button{
+
+.reg-button {
     width: 100%;
     align-content: center;
-    padding:  10px 10px 7px 10px;
+    padding: 10px 10px 7px 10px;
     background-color: #228B22;
     border-radius: 9px;
     border: 5px solid white;
