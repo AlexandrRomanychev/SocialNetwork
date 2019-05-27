@@ -4,11 +4,21 @@
   "description": "socialnetworks",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "btoa": "^1.2.1",
+    "dom-parser": "^0.1.6",
+    "easyvk": "^2.4.13",
+    "express": "^4.16.4",
+    "instagram-web-api": "^2.0.0",
+    "jquery": "^3.4.0",
+    "jsdom": "^15.0.0",
+    "mongodb": "^3.2.3",
+    "request": "^2.88.0",
+    "sha3": "^2.0.1",
+    "vk-io": "^4.0.0-rc.17"
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
