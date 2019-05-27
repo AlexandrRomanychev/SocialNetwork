@@ -64,6 +64,32 @@ body {
     text-decoration: none;
 }
 
+.ok-exit{
+    margin: 0% 80% 0% 100%;
+    align-content: left;
+    padding: 7px 50px 7px 50px;
+    background-color: rgb(22, 21, 21);
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 150%;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
+.ok-button {
+    margin:  20% 80px 0% 20%;
+    align-content: left;
+    padding: 7px 60px 7px 60px;
+    background-color: rgb(22, 21, 21);
+    border-radius: 20px;
+    border: 2px solid white;
+    font-size: 150%;
+    color: white;
+    outline: none;
+    text-decoration: none;
+}
+
 .enter-button:hover {
     background: #E37023;
     border: 2px solid #E37023;
