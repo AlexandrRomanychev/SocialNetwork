@@ -11,7 +11,7 @@ module.exports = function(app) {
     var errorLog = false;
     var UserLogin = null;
     var UserPassword = null;
-    const easyvk = require('easyvk')
+    const easyvk = require('easyvk');
     app.get("/vk", function(request, response) {
 
         response.sendFile(__dirname + "/vk.html");
@@ -19,35 +19,13 @@ module.exports = function(app) {
     });
 
 
-    /*Для главной страницы VK*/
-    /*app.post("/vk", urlencodedParser, function (request, response) {
-        if (!request.body) return response.sendStatus(400);
-        console.log(request.body);
-        appId = '6972153'; //id моего приложения в вк
-        protectedKey = 'BSnlq3ZTPNT1bdP7WysF';//секретный ключ
-        redirUrl = "/vkLogin.html";//страница переадресации
-        authUrl = "http://oauth.vk.com/authorize?client_id=" + appId + "&client_secret=" + protectedKey +
-            "&v=5.95&responce_type=code&redirect_url=" + redirUrl + "&scope=friends";//пример запроса для получения почты пользователя. 
-        //Переадресует на страницу авторизации в вк(нужно сначала выйти из своего вк), и в командной строке выводит эту же ссылку
-        console.log(authUrl);
-        response.redirect(authUrl);
-    });*/
-    //app.post("/vk", urlencodedParser, function (request, response) {
-    //    authUrl = 'https://oauth.vk.com/authorize?client_id=6972153&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=friends&response_type=token&v=5.52';//Переадресует на страницу авторизации в вк(нужно сначала выйти из своего вк), и в командной строке выводит эту же ссылку
-
-
-
-    //   console.log(authUrl);
-    //   response.redirect(authUrl);
-    //   var http = require("http");
-    //   var url = require("url");
-    //   console.log(response);
-
-    //});
+ 
     app.post("/vk", urlencodedParser, function(request, response) {
         //Authenticating user
+       
         var login = `${request.body.login}`;
         var password = `${request.body.password}`;
+       
         easyvk({
             username: login,
             password: password,
@@ -61,25 +39,18 @@ module.exports = function(app) {
 
             response.redirect('https://vk.com/friends');
 
-        }).catch(console.error)
+        }).catch(error=> {
+            fs.readFile('vk.html', 'utf8', function (err, html) {
+                if (!err) {
+                    var dom = parser.parseFromString(html).rawHTML;
+                    //вывод сообщения о неверном логине/пароле
+                    response.send(dom.replace('<p></p>', '<p></p>\n\t<div class=\"error\">Неверный логин/пароль</div>\n</body>\n</html>'));
+                }
+            });
+        })
+               
+        
     });
-
-    /*app.post("/vk", urlencodedParser, function (request, response) {
-        $.ajax({
-            url: 'https://api.vk.com/method/friends.search?user_id=_noire&count=20&access_token=326fbbeb214c4b02a3817275b8b61835da607ab29ba3bf3440a78ae00c8cffc32587c50d58333c5eb9744&v=5.95',
-            method:'GET',
-            dataType: 'JSONP',
-            success: function (data) {
-                console.log("Успех");
-                console.log(data);
-            },
-            error: function (error) {
-                //обработка неверного ввода
-                console.log(error);
-                console.log("Не удалось войти");
-            }
-        });
-    });*/
 
     app.get("/vkLogin", function(request, response) {
 
