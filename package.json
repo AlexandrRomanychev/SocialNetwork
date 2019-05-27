@@ -7,13 +7,15 @@
         "body-parser": "^1.19.0",
         "btoa": "^1.2.1",
         "dom-parser": "^0.1.6",
+        "easyvk": "^2.4.13",
         "express": "^4.16.4",
         "jquery": ">=3.4.0",
         "jsdom": "^14.0.0",
         "mongodb": "^3.2.4",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "sha3": "^2.0.2"
+        "sha3": "^2.0.2",
+        "vk-io": "^4.0.0-rc.17"
     },
     "devDependencies": {
         "dom-parser": "^0.1.6",

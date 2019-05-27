@@ -34,16 +34,16 @@
             </div>
         </div>
         <div class="rightside">
-            <form class="log-window">
+            <form class="log-window" action="/vk" method="post">
                 <div class="input-log-parol-block">
-                    <input class="form-input" type="text" placeholder="Телефон или email">
+                    <input class="form-input" name="login" type="text" placeholder="Телефон или email">
                 </div>
                 <div class="input-log-parol-block">
-                    <input class="form-input" type="password" placeholder="Пароль">
+                    <input class="form-input" name="password" type="password" placeholder="Пароль">
                 </div>
                 <div class="auth-sumbit-block">
                     <a href="#">
-                        <input class="enter-button" type="button" value="Войти">
+                        <input class="enter-button" type="submit" value="Войти" >
                     </a>
                 </div>
             </form>
