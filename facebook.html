@@ -25,22 +25,7 @@
 				version    : 'v3.3'
 			});
 						  
-			FB.AppEvents.logPageView(); 
-			FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-					var accessToken = response.authResponse.accessToken;
-					console.log('You\'ve already been login in facebook!');
-					FB.api('/me/feed', 'GET',{},
-					function(response) {
-						console.log(response);//магия, которя будет выгружать данные 
-					});
-				} 
-				else
-				{		
-					console.log('User cancelled login or did not fully authorize.');		
-				}
-			});
-			
+			FB.AppEvents.logPageView(); 	
 		};
 					
 		(function(d, s, id){
@@ -50,6 +35,24 @@
 		js.src = "https://connect.facebook.net/en_US/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+
+		FB.getLoginStatus(function(response) {
+			if (response.status === 'connected') {
+				var accessToken = response.authResponse.accessToken;
+				console.log('You\'ve already been login in facebook!');	
+			} 
+			else
+			{		
+				console.log('User cancelled login or did not fully authorize.');		
+			}
+		},{scope: 'publish_actions'});
+
+		function post() {
+			FB.ui({
+				method: 'share',
+				href: 'https://developers.facebook.com/docs/',
+			}, function(response){});
+		}
 	</script>
 	
 		<!-- Хедер !-->
@@ -63,13 +66,16 @@
 		<a href="/enter" class="social exit">Выход</a> 
 	</div>
 		<!--  Мой Хедер !-->
-		<div class="header1">
-			<div class="logo">facebook</div>
-			<div class="header1-login">
-					<form action="/facebook" method="post">
-					<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
-			</div>
+	<div class="header1">
+		<div class="logo">facebook</div>
+		<div class="header1-login">
+				<form action="/facebook" method="post">
+				<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+				</form>
 		</div>
-	
+	</div>
+
+	<button onclick="post()">Post</button>
+	<div class="privacy"><a href="/privacy">Политика конфиденциальности</a></div>
 	</body>
 	</html>
