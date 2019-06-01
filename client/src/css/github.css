@@ -1,0 +1,98 @@
+.content {
+    margin-left: 43%;
+    margin-top: 3%;
+}
+
+h1 {
+    font-size: 24px
+}
+
+.loginform {
+    border: 1px solid #d8dee2;
+    width: 270px;
+    margin-left: -7%;
+    padding-left: 25px;
+    padding-bottom: 20px;
+}
+
+.login,
+.password,
+.button {
+    width: 90%;
+    height: 25px;
+}
+
+.button {
+    background-color: #34d058;
+    border-color: #34d058;
+    height: 30px;
+    width: 90%;
+    color: #fff;
+}
+
+.button:hover {
+    height: 30px;
+    width: 90%;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.content img {
+    width: 60px;
+    height: 60px;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.content .secondHeader {
+    margin-left: -70%;
+    margin-top: -4%;
+    font-size: 24px;
+}
+
+.content .secondHeader a {
+    color: #000;
+    margin-left: 6%;
+}
+
+.content .secondHeader img {
+    margin-left: 0%;
+    margin-top: -1%;
+    position: absolute;
+}
+
+.hello,
+.repos {
+    margin-left: -15%;
+    margin-top: 25%;
+}
+
+.repos {
+    margin-left: -55%;
+    margin-top: 5%;
+}
+
+.exitbutton {
+    margin-left: 0%;
+}
+
+table,
+th,
+td {
+    font-size: 24px;
+    border: 1px solid black;
+}
+
+td a {
+    color: #4682B4;
+}
+
+table {
+    width: 80%;
+}
+
+th {
+    width: 40%;
+    text-align: center;
+}

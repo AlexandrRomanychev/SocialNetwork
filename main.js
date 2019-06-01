@@ -17,7 +17,6 @@ module.exports = function(app) {
     app.get("/main", function(request, response) {
         userId = request.query.userId;
         console.log(userId);
-        response.sendFile(__dirname + "/main.html");
     });
 
     app.get("/change", function(request, response) {

@@ -13,6 +13,7 @@ class DataBase {
      * @returns список подходящих пльзователей
      */
     findUserByLogAndPass(collection, login, password) {
+        console.log('Поиск по логину и паролю');
         return new Promise(function(resolve, reject) {
             collection.find({ $and: [{ login: login }, { password: password }] }).toArray(function(err, results) {
                 if (err != null)
