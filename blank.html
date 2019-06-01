@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="">
+    <head>
+        <title>Одноклассники</title>
+       <!-- Подклчение таблицы стилей для header !-->
+       <link rel="stylesheet" type="text/css" href="css/style.css">
+       <!-- Подклчение таблицы стилей для авторизации в одноклассниках !-->
+       <link rel="stylesheet" type="text/css" href="css/odnoclass.css">
+       <!-- Подключение стилей обнуляющих во всех браузерах стандартные настройки !-->
+       <link rel="stylesheet" type="text/css" href="css/nullStyle.css">
+       <!-- Кодировка страниц !-->
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+       <!-- Иконка на вкладке !-->
+       <link rel="shortcut icon" href="images/ok_sighn.png" type="image/x-icon">
+
+        <!-- Хедер !-->
+        <div class="header">
+            <span>Социальные сети</span>
+            <div class=" aiming-vk-link vk" ><a href="/vk">Вконтакте</a></div>    
+            <div class=" aiming-instagram-link instagram"><a href="/instagram">Instagram</a></div>
+            <div class =" aiming-odnoclass-link odnok"> <a href="/odnoclassniki">Одноклассники</a></div>
+            <div class=" aiming-facebook-link fb"><a href="/facebook">Facebook</a></div>
+            <div class=" aiming-github-link git"><a href="/github">GitHub</a></div>
+            <a href="/enter" class="social exit">Выход</a> 
+        </div>
+    </head>
+    <body>    
+       
+        <div class="auth-sumbit-block">
+            <input class="ok-button" value="Ваша страница OK" id = "but_user_page" type="button" >
+        </div>
+        <div class="auth-sumbit-block">
+            <input class="ok-button" value="Ищем новых друзей" id = "but_new_friend" type="button" >
+        </div>
+        <div class="auth-sumbit-block">
+            <input class="ok-button" value="Сообщения" id = "but_mas" type="button" >
+        </div>
+        <div class="auth-sumbit-block">
+            <input class="ok-button" value="Мои видео" id = "my_video" type="button" >
+        </div>
+        <div class="auth-sumbit-block">
+            <form method="GET" action="/odnoclassniki">
+                <input class="ok-exit" type="submit" value="Выход">
+            </form>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script>
+            "use strict"
+            $(function()
+            {
+                var but_user = $('#but_user_page');
+                var but_new_friend = $('#but_new_friend');
+                var but_mas = $('#but_mas');
+                var but_video = $('#my_video');
+                var id_user;
+                but_user.click(function()
+                {
+                    $.ajax(
+                    {
+                        url : "https://api.ok.ru/fb.do?application_key=CBAGOPCNEBABABABA&format=json&method=users.getLoggedInUser&sig=72579a80b2cde137bffc5b98eb287107&access_token=tkn1wkVNUWIusOzuCjdsPPDPOZ0jaVvTiSW8P0Qi8jhBqBEWl8rMAv7e4SvyxNqdmZhll1",
+                        success : function(result)
+                        {
+                            id_user = result;
+                            var ok_page_user = "https://ok.ru/profile/" + id_user;
+                            window.location.href = ok_page_user;
+                        }      
+                    });
+                })  
+
+                but_new_friend.click(function()
+                {
+                    $.ajax(
+                    {
+                        url : "https://api.ok.ru/fb.do?application_key=CBAGOPCNEBABABABA&format=json&method=users.getLoggedInUser&sig=72579a80b2cde137bffc5b98eb287107&access_token=tkn1wkVNUWIusOzuCjdsPPDPOZ0jaVvTiSW8P0Qi8jhBqBEWl8rMAv7e4SvyxNqdmZhll1",
+                        success : function(result)
+                        {
+                            id_user = result;
+                            var ok_page_user = "https://ok.ru/profile/" + id_user + "/pymk";
+                            window.location.href = ok_page_user;
+                        }      
+                    });
+                })  
+
+                but_mas.click(function()
+                {
+                    var ok_page_user = "https://ok.ru/messages" ;
+                    window.location.href = ok_page_user ;   
+                });
+
+                but_video.click(function()
+                {
+                    $.ajax(
+                    {
+                        url : "https://api.ok.ru/fb.do?application_key=CBAGOPCNEBABABABA&format=json&method=users.getLoggedInUser&sig=72579a80b2cde137bffc5b98eb287107&access_token=tkn1wkVNUWIusOzuCjdsPPDPOZ0jaVvTiSW8P0Qi8jhBqBEWl8rMAv7e4SvyxNqdmZhll1",
+                        success : function(result)
+                        {
+                            id_user = result;
+                            var ok_page_user = "https://ok.ru/video/myVideo";
+                            window.location.href = ok_page_user;
+                        }      
+                    });
+                }) 
+            })
+
+        </script>
+    </body>
+</html>
