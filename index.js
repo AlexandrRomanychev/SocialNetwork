@@ -136,7 +136,7 @@ require('./facebook.js')(app);
 require('./odnoclassniki.js')(app);
 require('./instagram.js')(app);
 require('./vk.js')(app);
-
+require('./privacy.js')(app);
 app.listen(port, function() {
     console.log(`Example app listening on port ` + port + ` !`);
 });
